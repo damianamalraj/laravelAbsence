@@ -43,111 +43,197 @@
                     </ul>
                 </nav>
                 <section class="form-section">
-                  <div class="heading">
-                    <p>Frånvaro</p>
-                    <h1>Frånvaro</h1>
-                  </div>
-                  <div class="form-container">
-                    <form id="absence-form">
-                        <div class="form-heading">
-                          <h3>Ny frånvaro</h3>
-                        </div>
-                        <div>
-                            <label for="absenceType">Frånvarotyp*</label>
-                            <div class="card-container">
-                                <input
-                                    type="radio"
-                                    name="absenceType"
-                                    value="SickLeave"
-                                    id="Sjukanmalan"
-                                    class="card-input"
-                                />
-                                <label for="Sjukanmalan" class="card">
-                                    Sjukanmälan
-                                </label>
-
-                                <input
-                                    type="radio"
-                                    name="absenceType"
-                                    value="VAB"
-                                    id="VAB"
-                                    class="card-input"
-                                />
-                                <label for="VAB" class="card"> VAB </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="absenceID">Frånvaronivå</label>
-                            <input
-                                type="number"
-                                id="absenceID"
-                                name="absenceID"
-                                min="100"
-                                max="105"
-                            />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="absenceDateFrom"
-                                >Frånvaro från datum*</label
-                            >
-                            <input
-                                type="date"
-                                id="absenceDateFrom"
-                                name="absenceDateFrom"
-                                required
-                            />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="absenceTimeFrom"
-                                >Frånvaro från klockan</label
-                            >
-                            <input
-                                type="time"
-                                id="absenceTimeFrom"
-                                name="absenceTimeFrom"
-                            />
-                        </div>
-                        <hr />
-                        <div class="form-group">
-                            <label for="absenceDateTo"
-                                >Beräknat tillbaka*</label
-                            >
-                            <input
-                                type="date"
-                                id="absenceDateTo"
-                                name="absenceDateTo"
-                                required
-                            />
-                        </div>
-
-                        <div class="form-group">
-                            <label for="comments">Kommentarer</label>
-                            <textarea id="comments" name="comments"></textarea>
-                        </div>
-
-                        <div class="form-group">
-                            <label for="phoneNumber">Telefonnummer*</label>
-                            <input
-                                type="tel"
-                                id="phoneNumber"
-                                name="phoneNumber"
-                                required
-                            />
-                        </div>
-
-                        <div class="form-group">
-                            <button type="submit" id="submitBtn">
-                                Frånvaroanmälan
-                            </button>
-                        </div>
-                    </form>
+                    <div class="heading">
+                        <p>Frånvaro</p>
+                        <h1>Frånvaro</h1>
                     </div>
+                    <div class="form-container">
+                        <form id="absence-form">
+                            <div class="form-heading">
+                                <h3>Ny frånvaro</h3>
+                            </div>
+                            <div class="form-text">
+                                <p>
+                                    Var medveten om att sjukanmällan för samma
+                                    dag inte är giltig om den görs innan 05.00
+                                </p>
+                            </div>
+                            <div class="form">
+                                <div>
+                                    <label for="absenceType"
+                                        >Frånvarotyp*</label
+                                    >
+                                    <div class="card-container">
+                                        <input
+                                            type="radio"
+                                            name="absenceType"
+                                            value="SickLeave"
+                                            id="Sjukanmalan"
+                                            class="card-input"
+                                        />
+                                        <label for="Sjukanmalan" class="card">
+                                            Sjukanmälan
+                                        </label>
 
+                                        <input
+                                            type="radio"
+                                            name="absenceType"
+                                            value="VAB"
+                                            id="VAB"
+                                            class="card-input"
+                                        />
+                                        <label for="VAB" class="card">
+                                            VAB
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="absenceID">Frånvaronivå</label>
+                                    <div>
+                                        <input
+                                            type="number"
+                                            id="absenceID"
+                                            name="absenceID"
+                                            min="100"
+                                            max="105"
+                                        />
+                                        <small>Max 100%</small>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="absenceDateFrom"
+                                        >Frånvaro från datum*</label
+                                    >
+                                    <div>
+                                        <input
+                                            type="date"
+                                            id="absenceDateFrom"
+                                            name="absenceDateFrom"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="absenceTimeFrom"
+                                        >Frånvaro från klockan*</label
+                                    >
+                                    <div>
+                                        <input
+                                            type="time"
+                                            id="absenceTimeFrom"
+                                            name="absenceTimeFrom"
+                                            required
+                                        />
+                                        <small
+                                            >Kontrollera at tid och datum
+                                            stämmer. Den ska visa första dagen
+                                            du är frånvarande eller den tid du
+                                            lämnade arbetsplaten.</small
+                                        >
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="form-group break">
+                                    <label for="absenceDateTo"
+                                        >Beräknat tillbaka*</label
+                                    >
+                                    <div>
+                                        <input
+                                            type="date"
+                                            id="absenceDateTo"
+                                            name="absenceDateTo"
+                                            required
+                                        />
+                                        <small
+                                            >När kommer du troligtvis att vara
+                                            tillbaka? Du måste fortfarande göra
+                                            en friskanmälan när du är
+                                            tillbaka</small
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="comments">Kommentarer</label>
+                                    <div>
+                                        <textarea
+                                            id="comments"
+                                            name="comments"
+                                            rows="4"
+                                        ></textarea>
+                                        <small
+                                            >Vill du skicka ett medelande till
+                                            din arbetsgivare i samband med
+                                            anmälan? Skriv ingen känslig
+                                            information som kommentar.</small
+                                        >
+                                    </div>
+                                </div>
+                                <hr />
+                                <div class="info">
+                                    <h4>
+                                        En sjuksköterska kommer att följa upp
+                                        din frånvaro.
+                                    </h4>
+                                    <p>
+                                        Vi ringer upp frản
+                                        <a href="tel:08-522 505 94"
+                                            >08-522 505 94</a
+                                        >. Spara detta nummer i din telefonbok.
+                                    </p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber"
+                                        >Telefonnummer*</label
+                                    >
+                                    <div>
+                                        <input
+                                            type="tel"
+                                            id="phoneNumber"
+                                            name="phoneNumber"
+                                            placeholder="+46 123 456 789"
+                                            required
+                                        />
+                                        <small
+                                            >Ange det nummer du finns
+                                            tillgänglig på under
+                                            frånvarortiden</small
+                                        >
+                                    </div>
+                                </div>
+
+                                <div class="checkbox">
+                                    <label>
+                                        <input
+                                            type="checkbox"
+                                            name="confirmation"
+                                            value="yes"
+                                        />
+                                        Prioritera mig
+                                    </label>
+                                    <small
+                                        >Kryssa i om du vill at sjuksköterskan
+                                        ringer up så snart som möjligt.</small
+                                    >
+                                </div>
+
+                                <div class="form-group">
+                                    <button type="submit" id="submitBtn">
+                                        Frånvaroanmälan
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </section>
             </div>
         </main>
+        <footer>
+            <small>© 2024 Qurant Företagshälsa AB (Publ)</small>
+            <small>Behandling av personuppgifter / Support</small>
+        </footer>
     </body>
 </html>
