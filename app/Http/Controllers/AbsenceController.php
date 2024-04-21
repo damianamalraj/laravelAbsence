@@ -58,6 +58,14 @@ class AbsenceController extends Controller
             'priority' => 'required|boolean'
         ]);
 
+        if ($request->input('absenceType') == 1) {
+            $request->validate([
+                'comments' => 'required|string|max:255'
+            ]);
+        } else {
+            $validated['comments'] = $request->input('comments', '');
+        }
+
         return response()->json([
             'message' => 'Absence data received and validated successfully.',
             'data' => $validated
