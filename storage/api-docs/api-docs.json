@@ -1,0 +1,115 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Your API Title",
+        "description": "This is a simple API",
+        "contact": {
+            "email": "support@example.com"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/absence": {
+            "post": {
+                "tags": [
+                    "Absence"
+                ],
+                "summary": "Submit an absence notification",
+                "description": "Posts absence details to register an absence event. Ensure all required fields are included.",
+                "operationId": "f5da3fbd9aa69395da9010b0206fcb6d",
+                "requestBody": {
+                    "description": "Necessary details of the absence",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "required": [
+                                    "absenceType",
+                                    "dateFrom",
+                                    "estimatedReturnDate",
+                                    "phoneNumber",
+                                    "priority"
+                                ],
+                                "properties": {
+                                    "absenceType": {
+                                        "description": "Type of absence, e.g., 1 for sick leave.",
+                                        "type": "integer",
+                                        "example": 1
+                                    },
+                                    "absenceID": {
+                                        "description": "Optional identifier for the absence.",
+                                        "type": "integer",
+                                        "example": 101
+                                    },
+                                    "dateFrom": {
+                                        "description": "Start date of the absence.",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2024-01-01"
+                                    },
+                                    "timeFrom": {
+                                        "description": "Start time of the absence on the start date.",
+                                        "type": "string",
+                                        "format": "time",
+                                        "example": "08:00"
+                                    },
+                                    "estimatedReturnDate": {
+                                        "description": "Expected return date.",
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "2024-01-02"
+                                    },
+                                    "comments": {
+                                        "description": "Additional comments about the absence.",
+                                        "type": "string",
+                                        "example": "Feeling unwell"
+                                    },
+                                    "phoneNumber": {
+                                        "description": "Contact phone number during the absence.",
+                                        "type": "string",
+                                        "example": "+46 123 456 789"
+                                    },
+                                    "priority": {
+                                        "description": "Whether the absence should be treated as a priority.",
+                                        "type": "boolean",
+                                        "example": true
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Absence notification successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "properties": {
+                                        "message": {
+                                            "type": "string",
+                                            "example": "Absence notification created successfully"
+                                        },
+                                        "data": {
+                                            "description": "Echoes the posted absence details.",
+                                            "type": "object"
+                                        }
+                                    },
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Bad request due to invalid inputs"
+                    }
+                }
+            }
+        }
+    }
+}
