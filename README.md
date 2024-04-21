@@ -10,7 +10,8 @@ HTML - [absence.blade.php](resources/views/absence.blade.php)
 
 CSS - [absence.css](public/css/main.css)
 
-1. `cd larvaelAbsenseTest` - Go to project folder
+1. `cd laravelAbsenseTest` - Go to project folder
+1. `composer install` - Run to install dependencies
 1. `php artisan serve` - Run to start server
 1. [Frontend och design](http://localhost:8000) - Absence
 
@@ -20,7 +21,8 @@ Controller - [AbsenceController.php](app/Http/Controllers/AbsenceController.php)
 
 Routes - [web.php](routes/web.php)
 
-1. `cd larvaelAbsenseTest` - Go to project folder
+1. `cd laravelAbsenseTest` - Go to project folder
+1. `composer install` - Run to install dependencies
 1. `php artisan l5-swagger:generate` - Run to generate swagger docs
 1. `php artisan serve` - Run to start server
 1. [Swager docs](http://localhost:8000/api/documentation#/Absence/f5da3fbd9aa69395da9010b0206fcb6d) - Swagger docs
@@ -29,7 +31,8 @@ Routes - [web.php](routes/web.php)
 
 Test - [AbsenceTest.php](tests/Feature/AbsenceTest.php)
 
-1. `cd larvaelAbsenseTest` - Go to project folder
+1. `cd laravelAbsenseTest` - Go to project folder
+1. `composer install` - Run to install dependencies
 1. `php artisan test --filter AbsenceTest` - Run to start test
 
 Test results
